@@ -9,7 +9,7 @@ export const Navbar = () => {
 
         <Link
           href='/sign-in'
-          className='border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-2 transition'
+          className='border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 py-1 transition'
         >
           Login
         </Link>
