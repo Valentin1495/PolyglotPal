@@ -33,7 +33,15 @@ export default function Accordion({ data }: AccordionProps) {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <button onClick={() => setMultiSelection((prev) => !prev)}>
         Enable multi selection
       </button>
