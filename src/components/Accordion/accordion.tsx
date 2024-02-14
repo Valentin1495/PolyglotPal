@@ -1,8 +1,17 @@
 import { useState } from 'react';
-import data from './data.ts';
 
-export default function Accordion() {
-  const [multiSelection, setMultiSelection] = useState(false);
+type QA = {
+  id: string;
+  question: string;
+  answer: string;
+};
+
+type AccordionProps = {
+  data: QA[];
+};
+
+export default function Accordion({ data }: AccordionProps) {
+  const [multiSelection, setMultiSelection] = useState<boolean>(false);
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggle = (id: string) => {
