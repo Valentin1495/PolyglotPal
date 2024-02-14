@@ -30,14 +30,12 @@ export default function Accordion() {
       </button>
 
       {data.map((el) => {
-        const id = el.id;
-        const q = el.question;
-        const a = el.answer;
+        const { id, question, answer } = el;
 
         return (
           <section key={id}>
-            <h2 onClick={() => toggle(id)}>{q}</h2>
-            {selected.includes(id) && <p>{a}</p>}
+            <h2 onClick={() => toggle(id)}>{question}</h2>
+            {selected.includes(id) && <p>{answer}</p>}
           </section>
         );
       })}
