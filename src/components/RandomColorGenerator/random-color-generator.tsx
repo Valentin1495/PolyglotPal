@@ -40,16 +40,16 @@ export default function RandomColorGenerator() {
 
     let hexNum = '';
     for (let i = 0; i < 6; i++) {
-      const randomIdx = getRandomNumber(arr.length - 1);
+      const randomIdx = getRandomNumber(arr.length);
       hexNum += arr[randomIdx];
     }
     setColor('#' + hexNum);
   };
 
   const changeRGBcolor = () => {
-    const r = getRandomNumber(255);
-    const g = getRandomNumber(255);
-    const b = getRandomNumber(255);
+    const r = getRandomNumber(256);
+    const g = getRandomNumber(256);
+    const b = getRandomNumber(256);
 
     setColor(`rgb(${r}, ${g}, ${b})`);
   };
