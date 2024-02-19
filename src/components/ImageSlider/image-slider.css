@@ -1,0 +1,23 @@
+.chevron {
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+.chevron:hover > * {
+  animation: squish 200ms ease-in-out;
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}

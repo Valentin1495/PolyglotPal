@@ -1,4 +1,4 @@
-import { StarIcon } from '@heroicons/react/24/solid';
+import { Star } from 'lucide-react';
 import { useState } from 'react';
 
 export default function StarRating() {
@@ -12,13 +12,11 @@ export default function StarRating() {
   };
 
   const starIcons = Array.from({ length: 5 }, (_, idx) => (
-    <StarIcon
+    <Star
       key={idx}
-      style={{
-        height: '100px',
-        width: '100px',
-        color: index >= idx ? 'yellow' : 'black',
-      }}
+      size={100}
+      strokeWidth={0}
+      fill={index >= idx ? 'yellow' : 'black'}
       onMouseEnter={() => setIndex(idx)}
       onMouseLeave={() => (!determined ? setIndex(-1) : setIndex(prevIndex))}
       onClick={() => determineRating(idx)}
