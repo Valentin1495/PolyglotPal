@@ -9,6 +9,7 @@ import car2 from './assets/car-2.jpg';
 import car3 from './assets/car-3.jpg';
 import car4 from './assets/car-4.jpg';
 import car5 from './assets/car-5.jpg';
+import LoadMore from './components/LoadMore/load-more';
 
 const IMAGES = [
   {
@@ -40,6 +41,7 @@ function App() {
       <RandomColorGenerator />
       <StarRating />
       <ImageSlider images={IMAGES} />
+      <LoadMore />
     </>
   );
 }
