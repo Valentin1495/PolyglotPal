@@ -10,6 +10,8 @@ import car3 from './assets/car-3.jpg';
 import car4 from './assets/car-4.jpg';
 import car5 from './assets/car-5.jpg';
 import LoadMore from './components/LoadMore/load-more';
+import SwitchTheme from './components/SwitchTheme/switch-theme';
+import TreeView from './components/TreeView/tree-view';
 
 const IMAGES = [
   {
@@ -37,11 +39,13 @@ const IMAGES = [
 function App() {
   return (
     <>
-      <Accordion data={data} />
+      {/* <Accordion data={data} />
+      <ImageSlider images={IMAGES} />
       <RandomColorGenerator />
       <StarRating />
-      <ImageSlider images={IMAGES} />
       <LoadMore />
+      <TreeView />  */}
+      <SwitchTheme />
     </>
   );
 }
