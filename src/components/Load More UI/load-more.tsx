@@ -19,8 +19,8 @@ export default function LoadMore() {
         setLoading(true);
 
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/photos?client_id=${
-            import.meta.env.VITE_ACCESS_KEY
+          `${import.meta.env.VITE_UNSPLASH_API_URL}/photos?client_id=${
+            import.meta.env.VITE_UNSPLASH_ACCESS_KEY
           }&page=${page}&order_by=popular`
         );
         const data: Photo[] = await response.json();

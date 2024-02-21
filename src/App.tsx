@@ -1,17 +1,18 @@
 import './App.css';
 import Accordion from './components/Accordion/accordion';
 import data from './components/Accordion/data';
-import ImageSlider from './components/ImageSlider/image-slider';
-import RandomColorGenerator from './components/RandomColorGenerator/random-color-generator';
-import StarRating from './components/StarRating/star-rating';
+import ImageSlider from './components/Image Slider/image-slider';
+import RandomColorGenerator from './components/Random Color Generator/random-color-generator';
+import StarRating from './components/Star Rating/star-rating';
 import car1 from './assets/car-1.jpg';
 import car2 from './assets/car-2.jpg';
 import car3 from './assets/car-3.jpg';
 import car4 from './assets/car-4.jpg';
 import car5 from './assets/car-5.jpg';
-import LoadMore from './components/LoadMore/load-more';
-import SwitchTheme from './components/SwitchTheme/switch-theme';
-import TreeView from './components/TreeView/tree-view';
+import LoadMore from './components/Load More UI/load-more';
+import SwitchTheme from './components/Switch Theme/switch-theme';
+import TreeView from './components/Tree View UI/tree-view';
+import ScrollIndicator from './components/Scroll Indicator/scroll-indicator';
 
 const IMAGES = [
   {
@@ -39,13 +40,14 @@ const IMAGES = [
 function App() {
   return (
     <>
-      {/* <Accordion data={data} />
-      <ImageSlider images={IMAGES} />
-      <RandomColorGenerator />
-      <StarRating />
-      <LoadMore />
-      <TreeView />  */}
-      <SwitchTheme />
+      {/* <Accordion data={data} /> */}
+      {/* <ImageSlider images={IMAGES} /> */}
+      {/* <RandomColorGenerator /> */}
+      {/* <StarRating /> */}
+      {/* <LoadMore /> */}
+      {/* <TreeView />  */}
+      {/* <SwitchTheme /> */}
+      <ScrollIndicator />
     </>
   );
 }
