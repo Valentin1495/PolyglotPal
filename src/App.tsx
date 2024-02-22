@@ -14,6 +14,7 @@ import SwitchTheme from './components/Switch Theme/switch-theme';
 import TreeView from './components/Tree View UI/tree-view';
 import ScrollIndicator from './components/Scroll Indicator/scroll-indicator';
 import Tabs from './components/Tabs/tabs';
+import Dialog from './components/Dialog/dialog';
 
 const IMAGES = [
   {
@@ -67,7 +68,8 @@ function App() {
       {/* <TreeView />  */}
       {/* <SwitchTheme /> */}
       {/* <ScrollIndicator /> */}
-      <Tabs data={TABSDATA} />
+      {/* <Tabs data={TABSDATA} /> */}
+      <Dialog />
     </>
   );
 }
