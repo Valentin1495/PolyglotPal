@@ -13,6 +13,7 @@ import LoadMore from './components/Load More UI/load-more';
 import SwitchTheme from './components/Switch Theme/switch-theme';
 import TreeView from './components/Tree View UI/tree-view';
 import ScrollIndicator from './components/Scroll Indicator/scroll-indicator';
+import Tabs from './components/Tabs/tabs';
 
 const IMAGES = [
   {
@@ -37,6 +38,24 @@ const IMAGES = [
   },
 ];
 
+const TABSDATA = [
+  {
+    id: 1,
+    title: 'Tab1',
+    content: 'This is a content for tab1',
+  },
+  {
+    id: 2,
+    title: 'Tab2',
+    content: 'This is a content for tab2',
+  },
+  {
+    id: 3,
+    title: 'Tab3',
+    content: 'This is a content for tab3',
+  },
+];
+
 function App() {
   return (
     <>
@@ -47,7 +66,8 @@ function App() {
       {/* <LoadMore /> */}
       {/* <TreeView />  */}
       {/* <SwitchTheme /> */}
-      <ScrollIndicator />
+      {/* <ScrollIndicator /> */}
+      <Tabs data={TABSDATA} />
     </>
   );
 }
