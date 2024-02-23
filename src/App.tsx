@@ -15,6 +15,7 @@ import TreeView from './components/Tree View UI/tree-view';
 import ScrollIndicator from './components/Scroll Indicator/scroll-indicator';
 import Tabs from './components/Tabs/tabs';
 import Dialog from './components/Dialog/dialog';
+import GithubProfileFinder from './components/Github Profile FInder/github-profile-finder';
 
 const IMAGES = [
   {
@@ -69,7 +70,8 @@ function App() {
       {/* <SwitchTheme /> */}
       {/* <ScrollIndicator /> */}
       {/* <Tabs data={TABSDATA} /> */}
-      <Dialog />
+      {/* <Dialog /> */}
+      <GithubProfileFinder />
     </>
   );
 }

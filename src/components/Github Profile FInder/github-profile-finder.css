@@ -1,0 +1,18 @@
+.submit-btn {
+  color: white;
+  background-color: black;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 150ms ease-in-out;
+}
+
+.submit-btn:hover {
+  opacity: 75%;
+}
+
+.submit-btn:disabled {
+  pointer-events: none;
+  opacity: 50%;
+}
