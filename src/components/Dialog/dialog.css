@@ -10,6 +10,20 @@
   background-color: #8888881e;
 }
 
+.dialog {
+  animation: showDialog 150ms ease-in-out;
+}
+
+@keyframes showDialog {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .dialog-left-btn {
   border: 1px solid lightgray;
   padding: 5px 8px;
@@ -34,12 +48,4 @@
 
 .dialog-right-btn:hover {
   opacity: 75%;
-}
-
-.dialog-right-btn:disabled {
-  pointer-events: none;
-}
-
-.dialog-left-btn:disabled {
-  pointer-events: none;
 }
