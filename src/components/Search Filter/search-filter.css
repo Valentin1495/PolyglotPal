@@ -1,0 +1,19 @@
+.submit-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 150ms ease-in-out;
+  border-left: 1px solid lightgray;
+  background-color: rgba(211, 211, 211, 0.252);
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+  display: flex;
+  align-items: center;
+}
+
+.submit-btn:hover {
+  background-color: rgba(211, 211, 211, 0.344);
+}
+
+.submit-btn:disabled {
+  pointer-events: none;
+}

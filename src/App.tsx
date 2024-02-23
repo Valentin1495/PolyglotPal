@@ -16,6 +16,7 @@ import ScrollIndicator from './components/Scroll Indicator/scroll-indicator';
 import Tabs from './components/Tabs/tabs';
 import Dialog from './components/Dialog/dialog';
 import GithubProfileFinder from './components/Github Profile FInder/github-profile-finder';
+import SearchFilter from './components/Search Filter/search-filter';
 
 const IMAGES = [
   {
@@ -71,7 +72,8 @@ function App() {
       {/* <ScrollIndicator /> */}
       {/* <Tabs data={TABSDATA} /> */}
       {/* <Dialog /> */}
-      <GithubProfileFinder />
+      {/* <GithubProfileFinder /> */}
+      <SearchFilter />
     </>
   );
 }

@@ -103,8 +103,8 @@ export default function GithubProfileFinder() {
               borderRadius: '9999px',
             }}
           />
-          <h3>name: {user.name}</h3>
-          <h4>location: {user.location}</h4>
+          <h3>name: {user.name ?? 'unknown'}</h3>
+          <h4>location: {user.location ?? 'unknown'}</h4>
           <h4>joined {formatDate(user.created_at)}</h4>
           <a href={user.html_url} target='blank'>
             Github
