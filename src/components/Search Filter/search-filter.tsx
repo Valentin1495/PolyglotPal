@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
 import './search-filter.css';
 import { Search } from 'lucide-react';
 
@@ -8,7 +8,7 @@ type Email = {
 };
 
 export default function SearchFilter() {
-  const [emailList, setEmailList] = useState<string[]>([]);
+  const [emailList, setEmailList] = useState<Email[]>([]);
   const [query, setQuery] = useState<string>('');
   const [selected, setSelected] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -22,10 +22,12 @@ export default function SearchFilter() {
       const data: Email[] = await response.json();
 
       setEmailList(
-        data.map((el) => {
-          const email = el.email;
+        data.map(({ email, id }) => {
           const idx = email.indexOf('@');
-          return el.email.slice(0, idx);
+          return {
+            email: email.slice(0, idx),
+            id,
+          };
         })
       );
     };
@@ -41,8 +43,12 @@ export default function SearchFilter() {
     }
   }, []);
 
-  const filteredEmails = emailList.filter((email) =>
-    email.toLowerCase().includes(query.toLowerCase())
+  const filteredEmails = useMemo(
+    () =>
+      emailList.filter(({ email }) =>
+        email.toLowerCase().includes(query.toLowerCase())
+      ),
+    [emailList, query]
   );
 
   const searchEmailId = (e: FormEvent<HTMLFormElement>) => {
@@ -102,8 +108,9 @@ export default function SearchFilter() {
             flexDirection: 'column',
           }}
         >
-          {filteredEmails.map((email) => (
+          {filteredEmails.map(({ email, id }) => (
             <li
+              key={id}
               style={{
                 all: 'unset',
               }}
