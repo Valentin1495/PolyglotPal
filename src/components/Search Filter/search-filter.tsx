@@ -77,9 +77,9 @@ export default function SearchFilter() {
         onSubmit={searchEmailId}
         style={{
           border: '1px solid lightgray',
-          width: 'fit-content',
+          width: '70%',
           borderRadius: '9999px',
-          margin: 'auto',
+          marginLeft: '100px',
           display: 'flex',
           alignItems: 'center',
         }}
@@ -90,6 +90,7 @@ export default function SearchFilter() {
             textAlign: 'left',
             paddingLeft: '20px',
             paddingRight: '5px',
+            width: '100%',
           }}
           type='search'
           placeholder='Search'
@@ -102,24 +103,39 @@ export default function SearchFilter() {
         </button>
       </form>
       {query.trim() && (
-        <ul
+        <section
           style={{
             display: selected ? 'none' : 'flex',
             flexDirection: 'column',
+            boxShadow: '0px 0px 8px rgba(0, 0, 0, 0.25)',
+            width: 'calc(70% - 62px)',
+            marginTop: '10px',
+            marginLeft: '102px',
+            borderRadius: '10px',
+            padding: '10px 0px',
+            textAlign: 'left',
           }}
         >
-          {filteredEmails.map(({ email, id }) => (
-            <li
-              key={id}
+          {filteredEmails.length ? (
+            filteredEmails.map(({ email, id }) => (
+              <article
+                key={id}
+                className='filtered-email'
+                onClick={() => handleClick(email)}
+              >
+                {email}
+              </article>
+            ))
+          ) : (
+            <article
               style={{
-                all: 'unset',
+                padding: '0 10px',
               }}
-              onClick={() => handleClick(email)}
             >
-              {email}
-            </li>
-          ))}
-        </ul>
+              No results
+            </article>
+          )}
+        </section>
       )}
     </div>
   );

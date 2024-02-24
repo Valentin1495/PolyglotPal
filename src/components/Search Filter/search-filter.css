@@ -17,3 +17,12 @@
 .submit-btn:disabled {
   pointer-events: none;
 }
+
+.filtered-email {
+  padding: 5px 10px;
+  transition: background-color 100ms ease-in-out;
+}
+
+.filtered-email:hover {
+  background-color: lightgray;
+}
