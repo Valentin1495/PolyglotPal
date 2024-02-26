@@ -9,6 +9,7 @@ type Post = {
 export default function ScrollIndicator() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const scrollPercentage = useScrollPercentage();
 
   useEffect(() => {
@@ -18,11 +19,15 @@ export default function ScrollIndicator() {
         const response = await fetch(
           import.meta.env.VITE_JSON_PLACEHOLDER_API_URL + '/posts'
         );
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
         const data = await response.json();
         setPosts(data);
-        setLoading(false);
       } catch (error) {
-        console.error(error);
+        setError(error instanceof Error ? error.message : String(error));
+      } finally {
         setLoading(false);
       }
     };
@@ -31,6 +36,8 @@ export default function ScrollIndicator() {
   }, []);
 
   if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <div>
       <div

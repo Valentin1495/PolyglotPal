@@ -12,35 +12,38 @@ export default function SearchFilter() {
   const [query, setQuery] = useState<string>('');
   const [selected, setSelected] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
-  const [errMsg, setErrMsg] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const getEmailId = async () => {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/comments'
-      );
-      const data: Email[] = await response.json();
+      try {
+        setLoading(true);
+        const response = await fetch(
+          'https://jsonplaceholder.typicode.com/comments'
+        );
 
-      setEmailList(
-        data.map(({ email, id }) => {
-          const idx = email.indexOf('@');
-          return {
-            email: email.slice(0, idx),
-            id,
-          };
-        })
-      );
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data: Email[] = await response.json();
+        setEmailList(
+          data.map(({ email, id }) => {
+            const idx = email.indexOf('@');
+            return {
+              email: email.slice(0, idx),
+              id,
+            };
+          })
+        );
+      } catch (error) {
+        setError(error instanceof Error ? error.message : String(error));
+      } finally {
+        setLoading(false);
+      }
     };
 
-    try {
-      setLoading(true);
-      getEmailId();
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-      setErrMsg('Something went wrong.');
-      setLoading(false);
-    }
+    getEmailId();
   }, []);
 
   const filteredEmails = useMemo(
@@ -66,24 +69,15 @@ export default function SearchFilter() {
   };
 
   if (loading) return <p>Loading...</p>;
-  if (errMsg) return <p>{errMsg}</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <div
       style={{
         padding: '50px',
       }}
     >
-      <form
-        onSubmit={searchEmailId}
-        style={{
-          border: '1px solid lightgray',
-          width: '70%',
-          borderRadius: '9999px',
-          marginLeft: '100px',
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
+      <form onSubmit={searchEmailId} className='search-form'>
         <input
           style={{
             all: 'unset',
@@ -104,13 +98,13 @@ export default function SearchFilter() {
       </form>
       {query.trim() && (
         <section
+          className='emails-container'
           style={{
             display: selected ? 'none' : 'flex',
             flexDirection: 'column',
             boxShadow: '0px 0px 8px rgba(0, 0, 0, 0.25)',
-            width: 'calc(70% - 62px)',
-            marginTop: '10px',
-            marginLeft: '102px',
+
+            margin: '10px auto',
             borderRadius: '10px',
             padding: '10px 0px',
             textAlign: 'left',

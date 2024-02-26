@@ -14,7 +14,7 @@ type User = {
 export default function GithubProfileFinder() {
   const [input, setInput] = useState<string>('');
   const [user, setUser] = useState<User | null>(null);
-  const [errMSg, setErrMsg] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   const searchUser = async (e: FormEvent<HTMLFormElement>) => {
@@ -26,7 +26,7 @@ export default function GithubProfileFinder() {
 
       if (data.message) {
         setUser(null);
-        setErrMsg(data.message);
+        setError(data.message);
       } else {
         const { id, avatar_url, created_at, location, name, html_url } = data;
 
@@ -38,12 +38,11 @@ export default function GithubProfileFinder() {
           name,
           html_url,
         });
-        setErrMsg('');
+        setError(null);
       }
-      setLoading(false);
     } catch (error) {
-      console.error(error);
-      setErrMsg('');
+      setError(error instanceof Error ? error.message : String(error));
+    } finally {
       setLoading(false);
     }
   };
@@ -91,27 +90,30 @@ export default function GithubProfileFinder() {
           {loading ? 'Submitting...' : 'Submit'}
         </button>
       </form>
-      {user && (
-        <section>
-          <img
-            src={user.avatar_url}
-            alt='profile picture'
-            width={200}
-            height={200}
-            style={{
-              objectFit: 'cover',
-              borderRadius: '9999px',
-            }}
-          />
-          <h3>name: {user.name ?? 'unknown'}</h3>
-          <h4>location: {user.location ?? 'unknown'}</h4>
-          <h4>joined {formatDate(user.created_at)}</h4>
-          <a href={user.html_url} target='blank'>
-            Github
-          </a>
-        </section>
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        user && (
+          <section>
+            <img
+              src={user.avatar_url}
+              alt='profile picture'
+              width={200}
+              height={200}
+              style={{
+                objectFit: 'cover',
+                borderRadius: '9999px',
+              }}
+            />
+            <h3>name: {user.name ?? 'unknown'}</h3>
+            <h4>location: {user.location ?? 'unknown'}</h4>
+            <h4>joined {formatDate(user.created_at)}</h4>
+            <a href={user.html_url} target='blank'>
+              Github
+            </a>
+          </section>
+        )
       )}
-      {errMSg && <p>{errMSg}</p>}
     </div>
   );
 }

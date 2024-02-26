@@ -10,6 +10,7 @@ type Photo = {
 
 export default function LoadMore() {
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [page, setPage] = useState<number>(1);
 
@@ -23,16 +24,19 @@ export default function LoadMore() {
             import.meta.env.VITE_UNSPLASH_ACCESS_KEY
           }&page=${page}&order_by=popular`
         );
-        const data: Photo[] = await response.json();
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
 
+        const data: Photo[] = await response.json();
         setPhotos((prev) => {
           if (!prev.length || prev[0].id !== data[0].id)
             return [...prev, ...data];
           return prev;
         });
-        setLoading(false);
       } catch (error) {
-        console.error(error);
+        setError(error instanceof Error ? error.message : String(error));
+      } finally {
         setLoading(false);
       }
     };
@@ -87,6 +91,8 @@ export default function LoadMore() {
       >
         {loading ? (
           <p>Loading...</p>
+        ) : error ? (
+          <p>{error}</p>
         ) : (
           <button onClick={loadMore}>Load more</button>
         )}
