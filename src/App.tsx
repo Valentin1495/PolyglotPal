@@ -18,6 +18,7 @@ import Dialog from './components/Dialog/dialog';
 import GithubProfileFinder from './components/Github Profile FInder/github-profile-finder';
 import SearchFilter from './components/Search Filter/search-filter';
 import TicTacToe from './components/Tic-Tac-Toe/tic-tac-toe';
+import TestHook from './components/UseFetch/test-hook';
 
 const IMAGES = [
   {
@@ -75,7 +76,8 @@ function App() {
       {/* <Dialog /> */}
       {/* <GithubProfileFinder /> */}
       {/* <SearchFilter /> */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
+      <TestHook />
     </>
   );
 }
