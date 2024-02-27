@@ -17,6 +17,7 @@ import Tabs from './components/Tabs/tabs';
 import Dialog from './components/Dialog/dialog';
 import GithubProfileFinder from './components/Github Profile FInder/github-profile-finder';
 import SearchFilter from './components/Search Filter/search-filter';
+import TicTacToe from './components/Tic-Tac-Toe/tic-tac-toe';
 
 const IMAGES = [
   {
@@ -73,7 +74,8 @@ function App() {
       {/* <Tabs data={TABSDATA} /> */}
       {/* <Dialog /> */}
       {/* <GithubProfileFinder /> */}
-      <SearchFilter />
+      {/* <SearchFilter /> */}
+      <TicTacToe />
     </>
   );
 }
