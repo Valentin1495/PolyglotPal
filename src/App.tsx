@@ -76,8 +76,8 @@ function App() {
       {/* <Dialog /> */}
       {/* <GithubProfileFinder /> */}
       {/* <SearchFilter /> */}
-      {/* <TicTacToe /> */}
-      <TestHook />
+      <TicTacToe />
+      {/* <TestHook /> */}
     </>
   );
 }

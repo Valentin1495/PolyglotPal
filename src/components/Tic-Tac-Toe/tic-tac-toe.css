@@ -1,0 +1,28 @@
+.player-btn {
+  all: unset;
+  background-color: rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+
+.player-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.player-btn:disabled:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.player-btn:disabled {
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .player-btn {
+    font-size: 3rem;
+  }
+}
