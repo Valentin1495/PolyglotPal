@@ -24,9 +24,6 @@ export default function LoadMore() {
             import.meta.env.VITE_UNSPLASH_ACCESS_KEY
           }&page=${page}&order_by=popular`
         );
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
 
         const data: Photo[] = await response.json();
         setPhotos((prev) => {

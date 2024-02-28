@@ -19,12 +19,8 @@ export default function SearchFilter() {
       try {
         setLoading(true);
         const response = await fetch(
-          'https://jsonplaceholder.typicode.com/comments'
+          import.meta.env.VITE_JSON_PLACEHOLDER_API_URL + '/comments'
         );
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
 
         const data: Email[] = await response.json();
         setEmailList(

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useScrollPercentage } from './use-scroll-percentage';
+import { useScrollPercentage } from '../../hooks/use-scroll-percentage';
 
 type Post = {
   id: number;
@@ -19,9 +19,6 @@ export default function ScrollIndicator() {
         const response = await fetch(
           import.meta.env.VITE_JSON_PLACEHOLDER_API_URL + '/posts'
         );
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
 
         const data = await response.json();
         setPosts(data);

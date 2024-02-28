@@ -1,5 +1,5 @@
 import { Moon, Sun } from 'lucide-react';
-import { useLocalStorage } from './use-local-storage';
+import { useLocalStorage } from '../../hooks/use-local-storage';
 
 export default function SwitchTheme() {
   const { value: theme, setValue: setTheme } = useLocalStorage(

@@ -21,7 +21,9 @@ export default function GithubProfileFinder() {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await fetch('https://api.github.com/users/' + input);
+      const response = await fetch(
+        `${import.meta.env.VITE_GITHUB_API_URL}/${input}`
+      );
       const data = await response.json();
 
       if (data.message) {
