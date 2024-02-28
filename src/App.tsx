@@ -20,6 +20,7 @@ import SearchFilter from './components/Search Filter/search-filter';
 import TicTacToe from './components/Tic-Tac-Toe/tic-tac-toe';
 import TestHook from './components/UseWindowResize/test-hook';
 import ScrollToTopAndBottom from './components/Scroll to Top and Bottom/scroll-to-top-and-bottom';
+import Scroll from './components/Scroll/scroll';
 
 const IMAGES = [
   {
@@ -79,7 +80,8 @@ function App() {
       {/* <SearchFilter /> */}
       {/* <TicTacToe /> */}
       {/* <TestHook /> */}
-      <ScrollToTopAndBottom />
+      {/* <ScrollToTopAndBottom /> */}
+      <Scroll />
     </>
   );
 }
