@@ -66,7 +66,7 @@ const TABSDATA = [
 function App() {
   return (
     <>
-      {/* <Accordion data={data} /> */}
+      <Accordion data={data} />
       {/* <ImageSlider images={IMAGES} /> */}
       {/* <RandomColorGenerator /> */}
       {/* <StarRating /> */}
@@ -81,7 +81,7 @@ function App() {
       {/* <TicTacToe /> */}
       {/* <TestHook /> */}
       {/* <ScrollToTopAndBottom /> */}
-      <Scroll />
+      {/* <Scroll /> */}
     </>
   );
 }

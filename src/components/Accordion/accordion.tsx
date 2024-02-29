@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import './accordion.css';
+import { ChevronDown } from 'lucide-react';
 
 type QA = {
   id: string;
@@ -32,30 +34,65 @@ export default function Accordion({ data }: AccordionProps) {
     }
   };
 
+  const enableMultiSelection = () => {
+    setMultiSelection((prev) => !prev);
+    setSelected([]);
+  };
+
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
       }}
     >
-      <button onClick={() => setMultiSelection((prev) => !prev)}>
+      <button className='btn' onClick={enableMultiSelection}>
         Enable multi selection
       </button>
 
-      {data.map((el) => {
-        const { id, question, answer } = el;
+      <h2
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        Frequently Asked Questions
+      </h2>
 
-        return (
-          <section key={id}>
-            <h2 onClick={() => toggle(id)}>{question}</h2>
-            {selected.includes(id) && <p>{answer}</p>}
+      <div
+        style={{
+          width: '80%',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+          marginBottom: '50px',
+        }}
+      >
+        {data.map(({ id, question, answer }) => (
+          <section key={id} className='accordion-item'>
+            <article className='accordion-trigger' onClick={() => toggle(id)}>
+              <h3>{question}</h3>
+              <ChevronDown
+                className={`${selected.includes(id) && 'open'} chevron`}
+              />
+            </article>
+
+            <article
+              className={`${selected.includes(id) && 'open'} accordion-content`}
+            >
+              <p
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                  padding: '20px',
+                }}
+              >
+                {answer}
+              </p>
+            </article>
           </section>
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
 }
