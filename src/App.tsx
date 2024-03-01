@@ -1,25 +1,24 @@
 import './App.css';
 import Accordion from './components/Accordion/accordion';
 import data from './components/Accordion/data';
-import ImageSlider from './components/Image Slider/image-slider';
-import RandomColorGenerator from './components/Random Color Generator/random-color-generator';
-import StarRating from './components/Star Rating/star-rating';
+import ImageSlider from './components/Image-Slider/image-slider';
+import RandomColorGenerator from './components/Random-Color-Generator/random-color-generator';
+import StarRating from './components/Star-Rating/star-rating';
 import car1 from './assets/car-1.jpg';
 import car2 from './assets/car-2.jpg';
 import car3 from './assets/car-3.jpg';
 import car4 from './assets/car-4.jpg';
 import car5 from './assets/car-5.jpg';
-import LoadMore from './components/Load More UI/load-more';
-import SwitchTheme from './components/Switch Theme/switch-theme';
-import TreeView from './components/Tree View UI/tree-view';
-import ScrollIndicator from './components/Scroll Indicator/scroll-indicator';
+import LoadMore from './components/Load-More/load-more';
+import SwitchTheme from './components/Switch-Theme/switch-theme';
+import ScrollIndicator from './components/Scroll-Indicator/scroll-indicator';
 import Tabs from './components/Tabs/tabs';
 import Dialog from './components/Dialog/dialog';
-import GithubProfileFinder from './components/Github Profile FInder/github-profile-finder';
-import SearchFilter from './components/Search Filter/search-filter';
+import GithubProfileFinder from './components/Github-Profile-FInder/github-profile-finder';
+import SearchFilter from './components/Search-Filter/search-filter';
 import TicTacToe from './components/Tic-Tac-Toe/tic-tac-toe';
-import TestHook from './components/UseWindowResize/test-hook';
-import ScrollToTopAndBottom from './components/Scroll to Top and Bottom/scroll-to-top-and-bottom';
+import TestHook from './components/Use-Window-Resize/test-hook';
+import ScrollTopBottom from './components/Scroll-Top-Bottom/scroll-top-bottom';
 import Scroll from './components/Scroll/scroll';
 
 const IMAGES = [
@@ -66,12 +65,11 @@ const TABSDATA = [
 function App() {
   return (
     <>
-      <Accordion data={data} />
+      {/* <Accordion data={data} /> */}
       {/* <ImageSlider images={IMAGES} /> */}
       {/* <RandomColorGenerator /> */}
       {/* <StarRating /> */}
       {/* <LoadMore /> */}
-      {/* <TreeView />  */}
       {/* <SwitchTheme /> */}
       {/* <ScrollIndicator /> */}
       {/* <Tabs data={TABSDATA} /> */}
@@ -80,7 +78,7 @@ function App() {
       {/* <SearchFilter /> */}
       {/* <TicTacToe /> */}
       {/* <TestHook /> */}
-      {/* <ScrollToTopAndBottom /> */}
+      {/* <ScrollTopBottom /> */}
       {/* <Scroll /> */}
     </>
   );

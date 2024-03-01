@@ -6,7 +6,7 @@ type Album = {
   title: string;
 };
 
-export default function ScrollToTopAndBottom() {
+export default function ScrollTopBottom() {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
