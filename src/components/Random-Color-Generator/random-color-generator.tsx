@@ -57,7 +57,7 @@ export default function RandomColorGenerator() {
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         backgroundColor: color,
       }}
     >
@@ -76,7 +76,12 @@ export default function RandomColorGenerator() {
         </button>
       </section>
 
-      <section>
+      <section
+        style={{
+          textAlign: 'center',
+          marginTop: '200px',
+        }}
+      >
         <h1>{type}</h1>
         <h2>{color}</h2>
       </section>

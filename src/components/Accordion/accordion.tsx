@@ -9,10 +9,10 @@ type QA = {
 };
 
 type AccordionProps = {
-  data: QA[];
+  accordionItems: QA[];
 };
 
-export default function Accordion({ data }: AccordionProps) {
+export default function Accordion({ accordionItems }: AccordionProps) {
   const [multiSelection, setMultiSelection] = useState<boolean>(false);
   const [selected, setSelected] = useState<string[]>([]);
 
@@ -69,7 +69,7 @@ export default function Accordion({ data }: AccordionProps) {
           marginBottom: '50px',
         }}
       >
-        {data.map(({ id, question, answer }) => (
+        {accordionItems.map(({ id, question, answer }) => (
           <section key={id} className='accordion-item'>
             <article className='accordion-trigger' onClick={() => toggle(id)}>
               <h3>{question}</h3>

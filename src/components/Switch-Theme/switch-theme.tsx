@@ -14,11 +14,12 @@ export default function SwitchTheme() {
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'column',
+        gap: 20,
         backgroundColor: theme === 'light' ? 'white' : 'black',
         transition: 'all 300ms ease-in-out',
       }}
@@ -32,6 +33,7 @@ export default function SwitchTheme() {
       >
         Hello World!
       </p>
+
       <button
         style={{
           cursor: 'pointer',

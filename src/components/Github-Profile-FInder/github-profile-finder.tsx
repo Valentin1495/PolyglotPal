@@ -86,7 +86,7 @@ export default function GithubProfileFinder() {
         />
         <button
           type='submit'
-          className='submit-btn'
+          className='find-btn'
           disabled={loading || !input.trim()}
         >
           {loading ? 'Submitting...' : 'Submit'}

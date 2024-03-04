@@ -60,6 +60,7 @@ export default function TicTacToe() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        gap: 10,
       }}
     >
       <div
@@ -76,12 +77,13 @@ export default function TicTacToe() {
             key={idx}
             onClick={() => !winner && !squares[idx] && handleClick(idx)}
             className='player-btn'
-            disabled={!!squares[idx]}
+            disabled={!!squares[idx] || !!winner}
           >
             {square}
           </button>
         ))}
       </div>
+
       <p
         style={{
           fontSize: '1.5rem',
@@ -93,6 +95,7 @@ export default function TicTacToe() {
           ? "It's a draw"
           : `Next player is ${isXTurn ? 'X' : 'O'}`}
       </p>
+
       <button
         onClick={restart}
         style={{

@@ -36,14 +36,18 @@ export default function Scroll() {
   };
 
   return (
-    <div
-      style={{
-        paddingTop: '50px',
-      }}
-    >
-      <button className='btn' onClick={scroll}>
-        Scroll to Third section
-      </button>
+    <div>
+      <div
+        style={{
+          textAlign: 'center',
+          padding: '50px 0',
+        }}
+      >
+        <button className='btn' onClick={scroll}>
+          Scroll to Third section
+        </button>
+      </div>
+
       {sections.map(({ label, className }, idx) => (
         <section key={idx} className={className} ref={idx === 2 ? ref : null}>
           {label}

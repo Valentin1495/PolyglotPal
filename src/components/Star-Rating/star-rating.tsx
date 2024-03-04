@@ -20,6 +20,10 @@ export default function StarRating() {
       onMouseEnter={() => setIndex(idx)}
       onMouseLeave={() => (!determined ? setIndex(-1) : setIndex(prevIndex))}
       onClick={() => determineRating(idx)}
+      style={{
+        cursor: 'pointer',
+        transition: 'all 100ms ease-in-out',
+      }}
     />
   ));
 
@@ -29,7 +33,7 @@ export default function StarRating() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
+        minHeight: '100vh',
       }}
     >
       {starIcons}

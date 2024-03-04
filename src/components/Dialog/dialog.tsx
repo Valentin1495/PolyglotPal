@@ -13,7 +13,7 @@ export default function Dialog() {
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -45,6 +45,7 @@ export default function Dialog() {
             }}
           >
             <h3>Are you absolutely sure?</h3>
+
             <p
               style={{
                 fontSize: '0.9rem',
@@ -53,17 +54,17 @@ export default function Dialog() {
               This action cannot be undone. This will permanently delete your
               account and remove your data from our servers.
             </p>
+
             <article
               style={{
                 textAlign: 'right',
+                marginTop: '20px',
               }}
             >
               <button className='dialog-left-btn' onClick={closeDialog}>
                 Cancel
               </button>
-              <button className='dialog-right-btn' onClick={closeDialog}>
-                Continue
-              </button>
+              <button className='dialog-right-btn'>Continue</button>
             </article>
           </section>
         </div>

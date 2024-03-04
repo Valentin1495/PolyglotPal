@@ -1,6 +1,6 @@
 import { useOnClickOutside } from '../../hooks/use-on-click-outside';
 
-export default function TestHook() {
+export default function TestHook2() {
   const { open, setOpen, ref } = useOnClickOutside();
 
   return (
@@ -22,12 +22,7 @@ export default function TestHook() {
           }}
         ></div>
       ) : (
-        <button
-          style={{
-            cursor: 'pointer',
-          }}
-          onClick={() => setOpen(true)}
-        >
+        <button className='btn' onClick={() => setOpen(true)}>
           Open
         </button>
       )}

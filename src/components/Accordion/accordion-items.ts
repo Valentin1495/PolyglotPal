@@ -1,4 +1,4 @@
-const data = [
+export const accordionItems = [
   {
     id: '1',
     question: 'What are accordion components?',
@@ -24,5 +24,3 @@ const data = [
       'Yes of course, it is very possible to create an accordion component with another framework.',
   },
 ];
-
-export default data;

@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 type TabsProps = {
-  data: {
+  tabsList: {
     id: number;
     title: string;
     content: string;
   }[];
 };
 
-export default function Tabs({ data }: TabsProps) {
+export default function Tabs({ tabsList }: TabsProps) {
   const [selectedTab, setSelectedTab] = useState<number>(1);
   const selectTab = (id: number) => {
     setSelectedTab(id);
@@ -17,7 +17,7 @@ export default function Tabs({ data }: TabsProps) {
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -34,7 +34,7 @@ export default function Tabs({ data }: TabsProps) {
           width: '400px',
         }}
       >
-        {data.map(({ id, title }) => (
+        {tabsList.map(({ id, title }) => (
           <button
             style={{
               backgroundColor: selectedTab === id ? 'white' : 'transparent',
@@ -43,6 +43,8 @@ export default function Tabs({ data }: TabsProps) {
               borderRadius: '3px',
               padding: '5px',
               transition: 'all 150ms ease-in-out',
+              cursor: 'pointer',
+              textAlign: 'center',
             }}
             key={id}
             onClick={() => selectTab(id)}
@@ -51,7 +53,9 @@ export default function Tabs({ data }: TabsProps) {
           </button>
         ))}
       </section>
-      <section>{data.filter((el) => el.id === selectedTab)[0].content}</section>
+      <section>
+        {tabsList.filter((el) => el.id === selectedTab)[0].content}
+      </section>
     </div>
   );
 }

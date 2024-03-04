@@ -1,4 +1,4 @@
-.submit-btn {
+.find-btn {
   color: white;
   background-color: black;
   padding: 6px 12px;
@@ -8,11 +8,11 @@
   transition: opacity 150ms ease-in-out;
 }
 
-.submit-btn:hover {
+.find-btn:hover {
   opacity: 75%;
 }
 
-.submit-btn:disabled {
+.find-btn:disabled {
   pointer-events: none;
   opacity: 50%;
 }

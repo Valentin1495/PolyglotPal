@@ -48,7 +48,8 @@ export default function LoadMore() {
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
+        padding: '16px',
       }}
     >
       <section
@@ -56,7 +57,6 @@ export default function LoadMore() {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
           gap: '16px',
-          padding: '16px',
         }}
       >
         {photos.map(({ id, urls, alt_description }) => (
@@ -83,15 +83,22 @@ export default function LoadMore() {
 
       <section
         style={{
-          padding: '16px',
+          textAlign: 'center',
         }}
       >
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>{error}</p>
+        {error ? (
+          <p
+            style={{
+              marginTop: '40px',
+              marginBottom: '30px',
+            }}
+          >
+            {error}
+          </p>
         ) : (
-          <button onClick={loadMore}>Load more</button>
+          <button className='btn' onClick={loadMore} disabled={loading}>
+            {loading ? 'Loading...' : 'Load more'}
+          </button>
         )}
       </section>
     </div>

@@ -27,7 +27,7 @@ export default function ImageSlider({ images }: ImageSliderProps) {
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -59,7 +59,7 @@ export default function ImageSlider({ images }: ImageSliderProps) {
         ))}
 
         <button
-          className='chevron'
+          className='arrow'
           onClick={slideRight}
           style={{
             right: 10,
@@ -68,7 +68,7 @@ export default function ImageSlider({ images }: ImageSliderProps) {
           <ArrowRight strokeWidth={3} size={24} color='black' />
         </button>
         <button
-          className='chevron'
+          className='arrow'
           onClick={slideLeft}
           style={{
             left: 10,

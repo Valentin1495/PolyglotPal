@@ -17,7 +17,7 @@ export default function ScrollIndicator() {
       try {
         setLoading(true);
         const response = await fetch(
-          import.meta.env.VITE_JSON_PLACEHOLDER_API_URL + '/posts'
+          'https://jsonplaceholder.typicode.com/posts'
         );
 
         const data = await response.json();
@@ -47,9 +47,19 @@ export default function ScrollIndicator() {
           transition: 'width 100ms',
         }}
       ></div>
-      {posts.map(({ id, title }) => (
-        <p key={id}>{title}</p>
-      ))}
+
+      <section
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '20px',
+        }}
+      >
+        {posts.map(({ id, title }) => (
+          <p key={id}>{title}</p>
+        ))}
+      </section>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export default function SearchFilter() {
       try {
         setLoading(true);
         const response = await fetch(
-          import.meta.env.VITE_JSON_PLACEHOLDER_API_URL + '/comments'
+          'https://jsonplaceholder.typicode.com/comments'
         );
 
         const data: Email[] = await response.json();
@@ -88,7 +88,7 @@ export default function SearchFilter() {
           value={query}
           onChange={handleChange}
         />
-        <button type='submit' className='submit-btn' disabled={!query.trim()}>
+        <button type='submit' className='search-btn' disabled={!query.trim()}>
           <Search color='black' size={20} strokeWidth={1.5} />
         </button>
       </form>
@@ -99,7 +99,6 @@ export default function SearchFilter() {
             display: selected ? 'none' : 'flex',
             flexDirection: 'column',
             boxShadow: '0px 0px 8px rgba(0, 0, 0, 0.25)',
-
             margin: '10px auto',
             borderRadius: '10px',
             padding: '10px 0px',

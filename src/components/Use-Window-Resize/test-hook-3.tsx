@@ -1,13 +1,12 @@
 import { useWindowResize } from '../../hooks/use-window-resize';
 
-export default function TestHook() {
+export default function TestHook3() {
   const { width, height } = useWindowResize();
-  console.log(width, height);
 
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

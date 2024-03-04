@@ -2,22 +2,7 @@ section {
   height: 600px;
   font-size: 2rem;
   font-weight: bold;
-}
-
-.btn {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  transition: opacity 150ms ease-in-out;
-  margin-bottom: 50px;
-}
-
-.btn:hover {
-  opacity: 80%;
+  text-align: center;
 }
 
 .first-section {

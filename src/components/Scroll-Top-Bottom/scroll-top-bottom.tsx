@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import './styles.css';
 
 type Album = {
   id: number;
@@ -29,7 +28,7 @@ export default function ScrollTopBottom() {
       try {
         setLoading(true);
         const response = await fetch(
-          import.meta.env.VITE_JSON_PLACEHOLDER_API_URL + '/albums'
+          'https://jsonplaceholder.typicode.com/albums'
         );
 
         const data = await response.json();
@@ -50,17 +49,24 @@ export default function ScrollTopBottom() {
     <div
       style={{
         padding: '50px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 20,
       }}
     >
-      <button className='scroll-btn' onClick={scrollToBottom}>
+      <button className='btn' onClick={scrollToBottom}>
         Scroll to bottom
       </button>
+
       {albums.map(({ id, title }) => (
         <p key={id}>{title}</p>
       ))}
-      <button className='scroll-btn' onClick={scrollToTop}>
+
+      <button className='btn' onClick={scrollToTop}>
         Scroll to top
       </button>
+
       <div ref={ref}></div>
     </div>
   );
