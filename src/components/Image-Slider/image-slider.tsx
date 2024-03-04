@@ -40,6 +40,7 @@ export default function ImageSlider({ images }: ImageSliderProps) {
           maxWidth: '1024px',
           aspectRatio: '10 / 6',
           display: 'flex',
+          margin: '0 20px',
         }}
       >
         {images.map(({ url, alt }, idx) => (

@@ -56,7 +56,8 @@ export default function LoadMore() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '16px',
+          gap: 16,
+          marginBottom: '16px',
         }}
       >
         {photos.map(({ id, urls, alt_description }) => (

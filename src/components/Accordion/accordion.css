@@ -1,26 +1,9 @@
-.btn {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  transition: opacity 150ms ease-in-out;
-  width: fit-content;
-  margin-top: 30px;
-}
-
-.btn:hover {
-  opacity: 80%;
-}
-
 .accordion-item {
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1px;
+  gap: 3px;
 }
 
 .accordion-trigger {

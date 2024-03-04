@@ -69,9 +69,16 @@ export default function RandomColorGenerator() {
           justifyContent: 'center',
         }}
       >
-        <button onClick={selectHex}>Hex color</button>
-        <button onClick={selectRGB}>RGB color</button>
-        <button onClick={type === 'hex' ? changeHexColor : changeRGBcolor}>
+        <button className='btn' onClick={selectHex}>
+          Hex color
+        </button>
+        <button className='btn' onClick={selectRGB}>
+          RGB color
+        </button>
+        <button
+          className='btn'
+          onClick={type === 'hex' ? changeHexColor : changeRGBcolor}
+        >
           Create random color
         </button>
       </section>

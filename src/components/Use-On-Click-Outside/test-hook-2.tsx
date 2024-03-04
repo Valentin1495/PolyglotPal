@@ -6,7 +6,7 @@ export default function TestHook2() {
   return (
     <div
       style={{
-        height: '100vh',
+        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -17,8 +17,8 @@ export default function TestHook2() {
           ref={ref}
           style={{
             backgroundColor: 'rgba(0,0,0,0.1)',
-            width: '50%',
-            height: '50%',
+            width: '400px',
+            height: '400px',
           }}
         ></div>
       ) : (

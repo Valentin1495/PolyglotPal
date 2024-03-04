@@ -49,7 +49,11 @@ export default function Scroll() {
       </div>
 
       {sections.map(({ label, className }, idx) => (
-        <section key={idx} className={className} ref={idx === 2 ? ref : null}>
+        <section
+          key={idx}
+          className={`${className} section`}
+          ref={idx === 2 ? ref : null}
+        >
           {label}
         </section>
       ))}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './accordion.css';
 import { ChevronDown } from 'lucide-react';
+import './accordion.css';
 
 type QA = {
   id: string;
@@ -43,55 +43,62 @@ export default function Accordion({ accordionItems }: AccordionProps) {
     <div
       style={{
         minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
       }}
     >
-      <button className='btn' onClick={enableMultiSelection}>
-        Enable multi selection
-      </button>
-
-      <h2
-        style={{
-          textAlign: 'center',
-        }}
-      >
-        Frequently Asked Questions
-      </h2>
-
       <div
         style={{
-          width: '80%',
           display: 'flex',
           flexDirection: 'column',
-          gap: '8px',
-          marginBottom: '50px',
+          alignItems: 'center',
+          padding: '30px 0',
         }}
       >
-        {accordionItems.map(({ id, question, answer }) => (
-          <section key={id} className='accordion-item'>
-            <article className='accordion-trigger' onClick={() => toggle(id)}>
-              <h3>{question}</h3>
-              <ChevronDown
-                className={`${selected.includes(id) && 'open'} chevron`}
-              />
-            </article>
+        <button className='btn' onClick={enableMultiSelection}>
+          Enable multi selection
+        </button>
 
-            <article
-              className={`${selected.includes(id) && 'open'} accordion-content`}
-            >
-              <p
-                style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                  padding: '20px',
-                }}
+        <h2
+          style={{
+            textAlign: 'center',
+          }}
+        >
+          Frequently Asked Questions
+        </h2>
+
+        <div
+          style={{
+            width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 8,
+          }}
+        >
+          {accordionItems.map(({ id, question, answer }) => (
+            <section key={id} className='accordion-item'>
+              <article className='accordion-trigger' onClick={() => toggle(id)}>
+                <h3>{question}</h3>
+                <ChevronDown
+                  className={`${selected.includes(id) && 'open'} chevron`}
+                />
+              </article>
+
+              <article
+                className={`${
+                  selected.includes(id) && 'open'
+                } accordion-content`}
               >
-                {answer}
-              </p>
-            </article>
-          </section>
-        ))}
+                <p
+                  style={{
+                    backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                    padding: '20px',
+                  }}
+                >
+                  {answer}
+                </p>
+              </article>
+            </section>
+          ))}
+        </div>
       </div>
     </div>
   );
