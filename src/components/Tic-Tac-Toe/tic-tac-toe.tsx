@@ -96,12 +96,7 @@ export default function TicTacToe() {
           : `Next player is ${isXTurn ? 'X' : 'O'}`}
       </p>
 
-      <button
-        onClick={restart}
-        style={{
-          cursor: 'pointer',
-        }}
-      >
+      <button onClick={restart} className='btn'>
         Restart
       </button>
     </div>
