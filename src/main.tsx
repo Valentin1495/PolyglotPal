@@ -32,71 +32,71 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: '/accordion',
+    path: 'accordion',
     element: <Accordion accordionItems={accordionItems} />,
   },
   {
-    path: '/image-slider',
+    path: 'image-slider',
     element: <ImageSlider images={images} />,
   },
   {
-    path: '/random-color-generator',
+    path: 'random-color-generator',
     element: <RandomColorGenerator />,
   },
   {
-    path: '/star-rating',
+    path: 'star-rating',
     element: <StarRating />,
   },
   {
-    path: '/load-more',
+    path: 'load-more',
     element: <LoadMore />,
   },
   {
-    path: '/switch-theme',
+    path: 'switch-theme',
     element: <SwitchTheme />,
   },
   {
-    path: '/scroll-indicator',
+    path: 'scroll-indicator',
     element: <ScrollIndicator />,
   },
   {
-    path: '/tabs',
+    path: 'tabs',
     element: <Tabs tabsList={tabsList} />,
   },
   {
-    path: '/dialog',
+    path: 'dialog',
     element: <Dialog />,
   },
   {
-    path: '/github-profile-finder',
+    path: 'github-profile-finder',
     element: <GithubProfileFinder />,
   },
   {
-    path: '/search-filter',
+    path: 'search-filter',
     element: <SearchFilter />,
   },
   {
-    path: '/tic-tac-toe',
+    path: 'tic-tac-toe',
     element: <TicTacToe />,
   },
   {
-    path: '/scroll-to-top-bottom',
+    path: 'scroll-to-top-bottom',
     element: <ScrollTopBottom />,
   },
   {
-    path: '/scroll-to-particular-section',
+    path: 'scroll-to-particular-section',
     element: <Scroll />,
   },
   {
-    path: '/use-fetch',
+    path: 'use-fetch',
     element: <TestHook1 />,
   },
   {
-    path: '/use-on-click-outside',
+    path: 'use-on-click-outside',
     element: <TestHook2 />,
   },
   {
-    path: '/use-window-resize',
+    path: 'use-window-resize',
     element: <TestHook3 />,
   },
 ]);
